@@ -4,10 +4,17 @@
     "declarationMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "incremental": false,
+    "incremental": false, // Consider setting to true if you want faster builds during development
     "lib": [
-      "ES2015", "ES2016", "ES2017", "ES2018",
-      "ES2019", "ES2020","ES2021", "DOM"
+      "ES2015",
+      "ES2016",
+      "ES2017",
+      "ES2018",
+      "ES2019",
+      "ES2020",
+      "ES2021",
+      "ES2022", // Added ES2022 for completeness
+      "DOM"
     ],
     "module": "nodenext",
     "moduleResolution": "nodenext",
@@ -16,15 +23,20 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
+    "noUnusedParameters": true, // Added to ensure no unused parameters
     "preserveSymlinks": true,
     "preserveWatchOutput": true,
-    "pretty": false,
+    "pretty": true, // Changed to true for better readability of compiler messages
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2022",
+    "target": "ES2022", // Updated to ES2022 for consistency with lib
+    "outDir": "./dist", // Added to specify output directory
+    "rootDir": "./src" // Added to specify the root directory of input files
   },
+  "include": ["src/**/*"], // Added to explicitly specify the included files
+  "exclude": ["node_modules", "dist"], // Added to exclude unnecessary directories
   "ts-node": {
     "experimentalSpecifierResolution": "node",
     "experimentalResolver": true,
